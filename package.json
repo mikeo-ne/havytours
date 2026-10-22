@@ -1,0 +1,14 @@
+{
+  "name": "havy-tours-jinja-poster",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Campaign poster generator for Havy Tours & Travel — Jinja Getaway Trip",
+  "scripts": {
+    "poster": "node src/poster.js",
+    "render": "node src/render.js",
+    "build": "node src/poster.js && node src/render.js"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}
