@@ -59,8 +59,10 @@ npm run build        # regenerates SVG + all PNG/JPG exports
   appear in the activity list.
 - **12 December 2026 is a Saturday** — verified, and shown on the date block.
 
-## Content to confirm with the client
+## Confirmed campaign details
 
-- The price reads **UGX 300,000** ("300 k" in the brief); labelled *per person*.
-- Meals and pick-up point are confirmed included.
-- Accommodation is still not stated, so the poster makes no claim about it.
+- **UGX 300,000 per person** — confirmed by the client ("300 k" in the brief).
+- **Meals** and **pick-up point** included — confirmed.
+- **12 December 2026 is a Saturday** — verified.
+- Website is **havytours.com**.
+- Accommodation is not stated in the brief, so the poster makes no claim about it.
