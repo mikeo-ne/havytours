@@ -15,7 +15,7 @@ export default function SiteFooter() {
       <div className="relative mx-auto max-w-[84rem] px-5 py-16 sm:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div>
-            <Logo tone="light" />
+            <Logo tone="footer" />
             <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-cream/60">
               A Kampala-based destination management company building safaris, city
               days and international itineraries across Uganda and beyond — since{" "}

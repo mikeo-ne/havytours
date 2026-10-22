@@ -4,6 +4,7 @@ import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import PageHero from "@/components/PageHero";
+import Partners from "@/components/Partners";
 import Reveal from "@/components/Reveal";
 import { milestones, placeholdersUsed, services, stats, team, values } from "@/lib/content";
 import { epicEscapades } from "@/lib/brands";
@@ -413,6 +414,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <Partners />
 
       <CtaBand />
     </>

@@ -1,42 +1,39 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Logo({
   tone = "dark",
   compact = false,
 }: {
-  tone?: "dark" | "light";
+  tone?: "dark" | "light" | "footer";
   compact?: boolean;
 }) {
-  const primary = tone === "light" ? "text-white" : "text-ink";
-  const secondary = tone === "light" ? "text-white/60" : "text-ink/55";
+  // "dark" = a dark surface, where the orange artwork reads on its own.
+  // "light" = a light surface, so the artwork is recoloured to ink for contrast.
+  // "footer" = the forest footer, where the artwork is recoloured to cream.
+  const src =
+    tone === "light"
+      ? "/images/brand/havy-logo-neutral.png"
+      : tone === "footer"
+        ? "/images/brand/havy-logo-footer.png"
+        : "/images/brand/havy-logo-main.png";
+
+  const size = compact ? { w: 96, h: 52, cls: "h-11" } : tone === "footer" ? { w: 150, h: 81, cls: "h-[4.6rem]" } : { w: 128, h: 69, cls: "h-14" };
 
   return (
     <Link
       href="/"
-      className="group inline-flex items-center gap-3"
+      className="group inline-flex shrink-0 items-center"
       aria-label="Havy Tours and Travel — home"
     >
-      <span
-        className={`grid size-10 shrink-0 place-items-center rounded-[10px] bg-clay font-display text-[1.35rem] leading-none text-white shadow-[0_6px_18px_-6px_rgba(194,100,58,0.8)] transition-transform duration-300 group-hover:-rotate-6 ${
-          compact ? "size-9 text-[1.2rem]" : ""
-        }`}
-      >
-        H
-      </span>
-      {!compact && (
-        <span className="flex flex-col leading-none">
-          <span
-            className={`font-display text-[1.32rem] font-semibold tracking-tight ${primary}`}
-          >
-            Havy Tours
-          </span>
-          <span
-            className={`mt-[3px] text-[0.6rem] font-medium tracking-[0.28em] ${secondary}`}
-          >
-            &amp; TRAVEL · UGANDA
-          </span>
-        </span>
-      )}
+      <Image
+        src={src}
+        alt="Havy Tours and Travel"
+        width={size.w}
+        height={size.h}
+        priority
+        className={`w-auto transition-transform duration-300 group-hover:-translate-y-0.5 ${size.cls}`}
+      />
     </Link>
   );
 }

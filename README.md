@@ -158,6 +158,12 @@ sitemap entry and form dropdown updates from it automatically.
 
 - Replace placeholder photography with the company's real image library
 - Confirm the Epic Escapades ride price list with the Jinja team
+- **Fill in the partner names.** The 16 partners are hotlinked in order from the
+  old site, but only the four schools (Kabojja International School, Trinity
+  College Nabbingo, Harvest International School, Lubiri Secondary School) were
+  identifiable from their filenames. The rest show as "Partner N" in
+  `lib/partners.ts` — drop in the real organisation names, and swap the hotlinks
+  for locally-hosted artwork when it's available.
 - Collect three real testimonials and real team profiles
 - Connect the enquiry endpoint to `travel@havytours.com` (or a CRM)
 - Add real availability / permit calendar for gorilla and chimpanzee trekking

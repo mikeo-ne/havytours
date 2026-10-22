@@ -4,6 +4,7 @@ import Accordion, { FaqSchema } from "@/components/Accordion";
 import CtaBand from "@/components/CtaBand";
 import CustomTrip from "@/components/CustomTrip";
 import Icon from "@/components/Icon";
+import Partners from "@/components/Partners";
 import Reveal from "@/components/Reveal";
 import Testimonials from "@/components/Testimonials";
 import TourCard from "@/components/TourCard";
@@ -348,6 +349,8 @@ export default function HomePage() {
       </section>
 
       <Testimonials />
+
+      <Partners />
 
       <CustomTrip id="custom" />
 
