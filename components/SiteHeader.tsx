@@ -26,7 +26,7 @@ export default function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-400 ${
         solid
-          ? "border-b border-line bg-cream/95 shadow-[0_1px_20px_-8px_rgba(25,23,19,0.25)] backdrop-blur-md"
+          ? "border-b border-forest-mid/40 bg-forest-deep/92 shadow-[0_1px_20px_-8px_rgba(22,41,30,0.55)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -35,7 +35,7 @@ export default function SiteHeader() {
           scrolled ? "h-[68px]" : "h-[84px]"
         }`}
       >
-        <Logo tone={solid ? "light" : "dark"} />
+        <Logo tone="dark" />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => {
@@ -46,13 +46,7 @@ export default function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={`relative px-4 py-2 text-[0.83rem] font-medium tracking-[0.01em] transition-colors duration-200 ${
-                  solid
-                    ? active
-                      ? "text-ink"
-                      : "text-ink-soft hover:text-ink"
-                    : active
-                      ? "text-white"
-                      : "text-white/80 hover:text-white"
+                  active ? "text-cream" : "text-cream/75 hover:text-cream"
                 }`}
               >
                 {link.label}
@@ -69,9 +63,7 @@ export default function SiteHeader() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={`tel:${site.phones[0].value.replace(/\s/g, "")}`}
-            className={`hidden items-center gap-2 text-[0.83rem] transition-colors xl:flex ${
-              solid ? "text-ink-soft hover:text-ink" : "text-white/85 hover:text-white"
-            }`}
+            className="hidden items-center gap-2 text-[0.83rem] text-cream/80 transition-colors hover:text-cream xl:flex"
           >
             <Icon name="phone" size={15} />
             {site.phones[0].value}
@@ -90,9 +82,7 @@ export default function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className={`grid size-10 place-items-center rounded-full transition-colors lg:hidden ${
-            solid ? "text-ink hover:bg-ink/5" : "text-white hover:bg-white/10"
-          }`}
+          className="grid size-10 place-items-center rounded-full text-cream transition-colors hover:bg-cream/10 lg:hidden"
         >
           <Icon name={open ? "close" : "menu"} size={22} />
         </button>
@@ -100,7 +90,7 @@ export default function SiteHeader() {
 
       {/* Mobile panel */}
       <div
-        className={`overflow-hidden border-t border-line/60 bg-cream transition-[max-height,opacity] duration-400 lg:hidden ${
+        className={`overflow-hidden border-t border-forest-mid/40 bg-forest-deep transition-[max-height,opacity] duration-400 lg:hidden ${
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -110,7 +100,7 @@ export default function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-line/50 py-3.5 font-display text-xl text-ink"
+              className="border-b border-cream/10 py-3.5 font-display text-xl text-cream"
             >
               {link.label}
             </Link>
@@ -127,7 +117,7 @@ export default function SiteHeader() {
             href={whatsappLink(site.whatsapp[2].number, "Hello Havy Tours, I'd like to plan a trip.")}
             target="_blank"
             rel="noreferrer"
-            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-5 py-3.5 text-[0.95rem] font-semibold text-ink"
+            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full border border-cream/25 px-5 py-3.5 text-[0.95rem] font-semibold text-cream"
           >
             <Icon name="whatsapp" size={17} />
             WhatsApp us
