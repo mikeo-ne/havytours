@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { milestones, placeholdersUsed, services, stats, team, values } from "@/lib/content";
+import { epicEscapades } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -19,7 +21,7 @@ export default function AboutPage() {
         eyebrow="Who we are"
         title="A Kampala company that runs its own trips."
         text="Founded in 2016 as a private destination management company, Havy Tours & Travel has grown into one of Uganda's better-known operators — and into a training body for the industry around it."
-        image="/images/tours/murchison-falls.jpg"
+        image="/images/about-team.jpg"
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
@@ -255,8 +257,97 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── TEAM ── */}
+      {/* ── VENTURES ── */}
       <section className="bg-cream py-20 sm:py-28">
+        <div className="mx-auto max-w-[84rem] px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <p className="eyebrow text-clay">Our ventures</p>
+              <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.08] text-ink sm:text-[2.6rem]">
+                Two brands under one roof.
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-7 lg:grid-cols-2">
+            <Reveal>
+              <Link
+                href="/epic-escapades"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-white transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-sand">
+                  <Image
+                    src={epicEscapades.image}
+                    alt="A red water bike on the Nile at Jinja, Uganda"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <p className="eyebrow text-clay">Adventure · Jinja</p>
+                  <h3 className="mt-3 font-display text-[1.5rem] font-semibold text-ink">
+                    Epic Escapades
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
+                    Our adventure brand on Lake Victoria and the Nile — water biking,
+                    tubing, boat cruises, quad biking, kayaking, rafting, zip-lining and
+                    corporate team building. Born from an Aga Khan Foundation grant and
+                    now running daily in Jinja.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[0.88rem] font-semibold text-clay">
+                    Explore Epic Escapades
+                    <Icon
+                      name="arrow-right"
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={110}>
+              <Link
+                href="/tours?category=honeymoon"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-white transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-sand">
+                  <Image
+                    src="/images/honeymoon.jpg"
+                    alt="A dhow boat off a Zanzibar beach at sunset"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <p className="eyebrow text-clay">Romance · Worldwide</p>
+                  <h3 className="mt-3 font-display text-[1.5rem] font-semibold text-ink">
+                    Honeymoon — destinations around the world
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
+                    Private vehicles, quiet lodges and island finishes. Zanzibar,
+                    Mombasa, Seychelles, Dubai and the Maldives — or a Ugandan safari
+                    with nobody else in the vehicle.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[0.88rem] font-semibold text-clay">
+                    See honeymoon trips
+                    <Icon
+                      name="arrow-right"
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TEAM ── */}
+      <section className="border-t border-line bg-cream-deep py-20 sm:py-28">
         <div className="mx-auto max-w-[84rem] px-5 sm:px-8">
           <Reveal>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">

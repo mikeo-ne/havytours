@@ -23,6 +23,7 @@ self-hosted Fraunces + Inter fonts (no external font requests).
 | --- | --- | --- |
 | 18 tour pages, generated from one data file | `/tours`, `/tours/[slug]` | Working |
 | Live filtering by category, length, budget + sorting | `/tours` | Working |
+| Epic Escapades brand page — 12 activities, dual-currency price list | `/epic-escapades` | Working |
 | Enquiry form with validation, submission and reference number | `/contact`, home, every tour page | Working (POSTs to `/api/enquiries`) |
 | Sticky enquiry panel pre-filled with the trip you're viewing | `/tours/[slug]` | Working |
 | WhatsApp deep links (Admin / Helpline / Reservations) | Everywhere | Working |
@@ -38,7 +39,8 @@ self-hosted Fraunces + Inter fonts (no external font requests).
 | `/` | Full-bleed hero, signature journeys, the six experience types, why Havy, stats, three-step process, testimonials, custom-trip form, FAQ |
 | `/tours` | Filters + sort, all 18 trips, category explainer |
 | `/tours/[slug]` | Hero, intro, highlights, gallery, day-by-day itinerary, inclusions/exclusions, sticky booking card, related trips |
-| `/about` | Story, mission/vision/values, stats, company timeline, services, team |
+| `/epic-escapades` | The Jinja adventure brand: 12 activities with prices, resident/non-resident ride pricing, hours, location, contacts |
+| `/about` | Story, mission/vision/values, stats, company timeline, services, ventures, team |
 | `/contact` | Office details, hours, WhatsApp channels, enquiry form (pre-fills if you arrive from a tour) |
 | `*` | Custom 404 with trip suggestions |
 
@@ -68,10 +70,18 @@ database. The request/response contract stays identical.
 - Founding year (2016), mission, vision, values, objectives, service list
 - The YUTO / Aga Khan Foundation / Rubirizi / Film & Cultural Week track record
 - The FAQ answers (visas, vaccinations, safety, gorilla trekking difficulty, packing)
+- **Epic Escapades** — the Jinja adventure brand: all 12 activity names and prices
+  from `epicescapadesug.com`, plus location, hours, phone numbers and email from
+  the Havy Tours homepage block
 
 **Rewritten:** all copy has been tightened. The original About page, for example,
 runs to roughly 1,200 words of nested clauses; it's now a scannable story plus
 structured sections. Nothing factual was changed.
+
+**⚠️ Needs verifying:** the Epic Escapades *ride* price list (30/60-minute
+water-bike and jet-ski rates) was read off a screenshot of the current site, not
+from a data source. It's marked on-page and flagged in `lib/brands.ts` — confirm
+the figures with the Jinja team before launch.
 
 ---
 
@@ -80,11 +90,11 @@ structured sections. Nothing factual was changed.
 Everything below is invented for the prototype:
 
 1. **All photography.** Every image in `public/images/` is AI-generated and is not a
-   real Havy Tours asset. Swap in the company's own library. The current site already
-   hosts a large set of real park photos at `havytours.com/wp-content/uploads/`.
-   Note: a handful of tours share an image (Kampala city, Kampala at night and
-   International all reuse `kampala-city.jpg`) simply because only ten images were
-   generated. This resolves once real photography is dropped in.
+   real Havy Tours asset. Swap in the company's own library — the current site
+   already hosts a large set of real park photos at
+   `havytours.com/wp-content/uploads/`, and the Epic Escapades site has real
+   activity photography too. A few tours still share an image (Kidepo appears on
+   three), which resolves once real photography is dropped in.
 2. **Testimonials** on the home page — three sample quotes, marked on-page.
 3. **Team names and roles** on `/about` — four cards reading `PLACEHOLDER`.
 4. **Office map** on `/contact` — a labelled empty frame; embed Google Maps.
@@ -129,10 +139,15 @@ app/
 components/            Header, footer, cards, forms, accordion, reveal, icons
 lib/
   tours.ts             All 18 tours — names, prices, itineraries, inclusions
+  brands.ts            Epic Escapades: activities, pricing, contacts
   site.ts              Company contact details
   content.ts           Copy blocks; placeholder items are flagged
 public/images/         Placeholder photography
 ```
+
+Epic Escapades pricing lives in `lib/brands.ts`; change `epicActivities` or
+`epicRidePricing` there and the `/epic-escapades` page, the home-page card and the
+cross-sell panel on adventure tours all update together.
 
 To add or edit a trip, change `lib/tours.ts` — every listing, filter, detail page,
 sitemap entry and form dropdown updates from it automatically.
@@ -142,6 +157,7 @@ sitemap entry and form dropdown updates from it automatically.
 ## Suggested next steps
 
 - Replace placeholder photography with the company's real image library
+- Confirm the Epic Escapades ride price list with the Jinja team
 - Collect three real testimonials and real team profiles
 - Connect the enquiry endpoint to `travel@havytours.com` (or a CRM)
 - Add real availability / permit calendar for gorilla and chimpanzee trekking

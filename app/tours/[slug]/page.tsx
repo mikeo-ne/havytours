@@ -16,6 +16,7 @@ import {
   type Tour,
 } from "@/lib/tours";
 import { site, whatsappLink } from "@/lib/site";
+import { epicEscapades } from "@/lib/brands";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -263,6 +264,41 @@ async function TourContent({ params }: Params) {
                   </ol>
                 </div>
               </Reveal>
+
+              {/* Epic Escapades cross-sell — adventure trips only */}
+              {tour.category === "adventure" && (
+                <Reveal delay={100}>
+                  <div className="mt-14 overflow-hidden rounded-[18px] border border-line bg-cream-deep">
+                    <div className="flex flex-col gap-6 p-7 sm:flex-row sm:items-center sm:gap-8">
+                      <Image
+                        src={epicEscapades.image}
+                        alt="Water biking on the Nile at Jinja"
+                        width={320}
+                        height={200}
+                        className="h-40 w-full shrink-0 rounded-xl object-cover sm:w-52"
+                      />
+                      <div className="flex-1">
+                        <p className="eyebrow text-clay">Our adventure brand</p>
+                        <h3 className="mt-2 font-display text-[1.3rem] font-semibold text-ink">
+                          Bolt on an Epic Escapades session
+                        </h3>
+                        <p className="mt-2 text-[0.93rem] leading-relaxed text-ink-soft">
+                          Water biking, tubing, boat cruises, quad biking, kayaking and
+                          zip-lining in Jinja — plus corporate team-building days. Add
+                          any of it to this itinerary.
+                        </p>
+                        <Link
+                          href="/epic-escapades"
+                          className="mt-4 inline-flex items-center gap-2 text-[0.88rem] font-semibold text-clay link-underline"
+                        >
+                          See what&apos;s on offer
+                          <Icon name="arrow-right" size={15} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              )}
 
               {/* Inclusions */}
               <Reveal delay={100}>

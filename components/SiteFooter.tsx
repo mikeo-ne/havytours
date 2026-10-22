@@ -46,6 +46,7 @@ export default function SiteFooter() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/tours", label: "All tours" },
+                { href: "/epic-escapades", label: "Epic Escapades" },
                 { href: "/about", label: "About us" },
                 { href: "/contact", label: "Contact" },
                 { href: "/contact#enquiry", label: "Plan a custom trip" },

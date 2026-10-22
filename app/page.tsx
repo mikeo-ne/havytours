@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import Testimonials from "@/components/Testimonials";
 import TourCard from "@/components/TourCard";
 import { categories, featuredTours, tours } from "@/lib/tours";
+import { epicEscapades } from "@/lib/brands";
 import { faqs, stats, steps, whyUs } from "@/lib/content";
 
 export default function HomePage() {
@@ -222,6 +223,94 @@ export default function HomePage() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────────── MORE FROM HAVY ───────────────────── */}
+      <section className="relative overflow-hidden border-y border-line bg-cream-deep py-20 sm:py-28">
+        <div className="mx-auto max-w-[84rem] px-5 sm:px-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <p className="eyebrow text-clay">More from Havy</p>
+              <h2 className="mt-4 font-display text-[2.1rem] font-semibold leading-[1.08] text-ink sm:text-[3rem]">
+                Two more ways we do this.
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-7 lg:grid-cols-2">
+            <Reveal>
+              <Link
+                href="/epic-escapades"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-white transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-sand">
+                  <Image
+                    src={epicEscapades.image}
+                    alt="A red water bike on the Nile at Jinja, Uganda"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <p className="eyebrow text-clay">Our adventure brand</p>
+                  <h3 className="mt-3 font-display text-[1.6rem] font-semibold text-ink">
+                    Epic Escapades
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
+                    Water biking, tubing, boat rides to the source of the Nile, quad
+                    biking, kayaking, rafting, zip-lining and corporate team building —
+                    run by our own team in Jinja, open every day.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[0.88rem] font-semibold text-clay">
+                    Explore Epic Escapades
+                    <Icon
+                      name="arrow-right"
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={110}>
+              <Link
+                href="/tours?category=honeymoon"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-line bg-white transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-sand">
+                  <Image
+                    src="/images/honeymoon.jpg"
+                    alt="A dhow boat off a Zanzibar beach at sunset"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <p className="eyebrow text-clay">Honeymoon</p>
+                  <h3 className="mt-3 font-display text-[1.6rem] font-semibold text-ink">
+                    Destinations around the world
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
+                    Private guides, quiet lodges and island finishes — Zanzibar,
+                    Mombasa, Seychelles, Dubai and the Maldives, or a safari with
+                    nobody else in the vehicle.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[0.88rem] font-semibold text-clay">
+                    See honeymoon trips
+                    <Icon
+                      name="arrow-right"
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import Reveal from "./Reveal";
 
 export default function CustomTrip({
-  image = "/images/tours/kidepo.jpg",
+  image = "/images/custom-trip.jpg",
   id,
 }: {
   image?: string;
@@ -46,7 +46,7 @@ export default function CustomTrip({
               <div className="mt-9 overflow-hidden rounded-[18px] border border-line">
                 <Image
                   src={image}
-                  alt="Open plains and distant mountains in Kidepo Valley, northeastern Uganda"
+                  alt="An open travel notebook with a hand-drawn map of Uganda, a compass and coffee on a wooden table"
                   width={900}
                   height={620}
                   className="h-64 w-full object-cover sm:h-72"
