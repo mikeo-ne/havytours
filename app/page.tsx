@@ -22,8 +22,8 @@ export default function HomePage() {
       <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest-deep">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero.jpg"
-            alt="A mountain gorilla in the misty rainforests of southwestern Uganda"
+            src="https://havytours.com/wp-content/uploads/2024/06/murchison-falls-national-park-uganda.webp"
+            alt="Murchison Falls pouring through the rocks in northwestern Uganda"
             fill
             priority
             sizes="100vw"
@@ -284,8 +284,8 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-sand">
                   <Image
-                    src="/images/honeymoon.jpg"
-                    alt="A dhow boat off a Zanzibar beach at sunset"
+                    src="https://havytours.com/wp-content/uploads/2023/09/Honey-3.jpg"
+                    alt="A honeymoon couple on a Mombasa beach"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"

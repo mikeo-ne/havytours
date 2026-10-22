@@ -68,7 +68,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="overflow-hidden rounded-[20px] border border-line">
                   <Image
-                    src="/images/tours/lake-bunyonyi.jpg"
+                    src="https://havytours.com/wp-content/uploads/2023/09/91891543.jpg"
                     alt="The terraced hills and islands of Lake Bunyonyi in southwestern Uganda"
                     width={1000}
                     height={1150}
@@ -315,8 +315,8 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-sand">
                   <Image
-                    src="/images/honeymoon.jpg"
-                    alt="A dhow boat off a Zanzibar beach at sunset"
+                    src="https://havytours.com/wp-content/uploads/2023/09/Honey-3.jpg"
+                    alt="A honeymoon couple on a Mombasa beach"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"

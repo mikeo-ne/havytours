@@ -35,7 +35,7 @@ export default function SiteHeader() {
           scrolled ? "h-[68px]" : "h-[84px]"
         }`}
       >
-        <Logo tone="dark" />
+        <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => {

@@ -45,7 +45,7 @@ export default function ContactPage() {
         eyebrow="Get in touch"
         title="Tell us where you want to wake up."
         text="One message is enough to start. We'll come back with a day-by-day itinerary and a price that doesn't move — usually within 48 hours."
-        image="/images/tours/kampala-city.jpg"
+        image="https://havytours.com/wp-content/uploads/2023/09/PUL_6735-1-1024x683.jpg"
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/contact", label: "Contact" },

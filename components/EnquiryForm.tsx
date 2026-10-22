@@ -31,6 +31,7 @@ export default function EnquiryForm({
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
   const [serverError, setServerError] = useState("");
+  const [whatsappFallback, setWhatsappFallback] = useState("");
   const [reference, setReference] = useState("");
 
   const tourNames = useMemo(() => tours.map((t) => t.name), []);
@@ -56,6 +57,7 @@ export default function EnquiryForm({
 
     setStatus("sending");
     setServerError("");
+    setWhatsappFallback("");
 
     try {
       const res = await fetch("/api/enquiries", {
@@ -73,7 +75,14 @@ export default function EnquiryForm({
         }),
       });
 
-      const json = (await res.json()) as { ok?: boolean; error?: string; reference?: string };
+      const json = (await res.json()) as {
+        ok?: boolean;
+        error?: string;
+        reference?: string;
+        whatsappUrl?: string;
+      };
+
+      if (json.whatsappUrl) setWhatsappFallback(json.whatsappUrl);
 
       if (!res.ok || !json.ok) {
         throw new Error(json.error ?? "Something went wrong. Please try again.");
@@ -260,9 +269,20 @@ export default function EnquiryForm({
       </div>
 
       {serverError && (
-        <p className="mt-5 rounded-xl border border-clay/25 bg-clay/[0.07] px-4 py-3 text-[0.87rem] text-clay-deep">
-          {serverError}
-        </p>
+        <div className="mt-5 rounded-xl border border-clay/25 bg-clay/[0.07] px-4 py-3">
+          <p className="text-[0.87rem] leading-relaxed text-clay-deep">{serverError}</p>
+          {whatsappFallback && (
+            <a
+              href={whatsappFallback}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-forest px-4 py-2.5 text-[0.85rem] font-semibold text-cream transition-colors hover:bg-forest-mid"
+            >
+              <Icon name="whatsapp" size={16} />
+              Send this enquiry on WhatsApp
+            </a>
+          )}
+        </div>
       )}
 
       <button
