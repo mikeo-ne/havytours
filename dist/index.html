@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Havy Tours — Jinja Getaway Poster</title>
+<style>
+  :root {
+    --cream: #F7F3E7;
+    --green: #0D2D15;
+    --gold: #C87A18;
+    --gold-light: #E4A94A;
+    --ink: #17301F;
+    --muted: #5C6B5E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bar { display: flex; height: 9px; }
+  .bar i:first-child { background: var(--gold); flex: 63; }
+  .bar i:last-child { background: var(--green); flex: 37; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 24px 70px;
+    display: grid;
+    grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .poster-shell {
+    position: sticky;
+    top: 28px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 18px 46px rgba(13, 45, 21, .22);
+  }
+  .poster-shell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 3.4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+  h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.08;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.6;
+    margin: 0 0 26px;
+    max-width: 46ch;
+  }
+
+  .downloads { display: grid; gap: 12px; }
+
+  a.dl {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    background: #fff;
+    border: 1.5px solid rgba(200, 122, 24, .28);
+    border-radius: 13px;
+    padding: 15px 18px;
+    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  }
+  a.dl:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 26px rgba(13, 45, 21, .13);
+  }
+  a.dl.primary {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  a.dl.primary .name,
+  a.dl.primary .meta { color: var(--cream); }
+  a.dl.primary .spec { color: #9FBBA4; }
+  a.dl.primary .icon { background: var(--gold); color: var(--green); }
+
+  .icon {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: rgba(200, 122, 24, .13);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+  }
+  .icon svg { width: 21px; height: 21px; }
+
+  .body { flex: 1 1 auto; min-width: 0; }
+  .name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--green);
+    margin: 0 0 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .spec { font-size: 12.5px; color: var(--muted); margin: 0; }
+
+  .tag {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    background: var(--gold);
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 5px;
+  }
+
+  .arrow { flex: 0 0 auto; opacity: .38; color: var(--green); }
+  a.dl.primary .arrow { color: var(--cream); opacity: .8; }
+
+  .note {
+    margin-top: 30px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--gold);
+    background: rgba(200, 122, 24, .07);
+    border-radius: 0 10px 10px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .note strong { color: var(--green); }
+  .note p { margin: 0 0 9px; }
+  .note p:last-child { margin-bottom: 0; }
+
+  .foot {
+    margin-top: 26px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+  <div class="bar"><i></i><i></i></div>
+
+  <div class="wrap">
+    <div class="poster-shell">
+      <img src="jinja-getaway-poster.png" alt="Jinja Getaway Trip poster — Havy Tours and Travel">
+    </div>
+
+    <div>
+      <p class="eyebrow">Havy Tours &amp; Travel</p>
+      <h1>Jinja Getaway Trip <em>— 12 Dec</em></h1>
+      <p class="sub">
+        Your poster is ready. Tap a file below to download it. Use the WhatsApp
+        version for sharing, and the print version if you're making flyers.
+      </p>
+
+      <div class="downloads">
+        <a class="dl primary" href="jinja-getaway-share.jpg" download>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="name">WhatsApp / Instagram <span class="tag">Best to send</span></span>
+            <span class="spec">JPG · 2160 × 2880 · 0.5 MB</span>
+          </span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+
+        <a class="dl" href="jinja-getaway-poster.png" download>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="name">High-resolution poster</span>
+            <span class="spec">PNG · 2160 × 2880 · 2.4 MB</span>
+          </span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+
+        <a class="dl" href="jinja-getaway-poster-print.png" download>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="name">Print / flyers <span class="tag">300 dpi</span></span>
+            <span class="spec">PNG · A4 · 2631 × 3508</span>
+          </span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+
+        <a class="dl" href="jinja-getaway-print.jpg" download>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="name">Print shop version</span>
+            <span class="spec">JPG · A4 · 2631 × 3508 · 300 dpi</span>
+          </span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+
+        <a class="dl" href="jinja-getaway.svg" download>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20 20 4"/><path d="M4 4h6v6H4z"/><path d="M14 20h6v-6h-6z"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="name">Editable vector</span>
+            <span class="spec">SVG · scales to any size · Illustrator / Inkscape</span>
+          </span>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="note">
+        <p><strong>Before you send it out:</strong></p>
+        <p>The price is labelled <strong>per person</strong> — confirm that's right, or tell me if 300K is for the whole group.</p>
+        <p>The poster doesn't mention accommodation, meals or the pickup point, because the brief didn't say. If any of those are included, they're worth adding.</p>
+      </div>
+
+      <p class="foot">
+        Logo used exactly as supplied by the client · 12 December 2026 is a Saturday (verified)<br>
+        havtours.com · 0762 652 564
+      </p>
+    </div>
+  </div>
+</body>
+</html>
