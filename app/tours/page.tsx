@@ -20,7 +20,7 @@ export default function ToursPage() {
         eyebrow="All experiences"
         title={`${tours.length} ways to see Uganda — and beyond.`}
         text="Every itinerary below is one we operate ourselves. Filter by what you feel like doing, how long you've got and what you'd rather spend, then tell us your dates."
-        image="/images/tours/queen-elizabeth.jpg"
+        image="https://havytours.com/wp-content/uploads/2023/09/Queen-Elizabeth-Havy-Tours-1024x576.jpg"
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/tours", label: "Tours" },

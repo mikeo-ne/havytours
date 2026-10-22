@@ -55,7 +55,26 @@ npm run build    # production build
 npm start        # serve the production build
 ```
 
-Enquiries submitted through the form are appended to `data/enquiries.json` (gitignored).
+### Enquiry delivery
+
+The form at `/api/enquiries` never drops a submission silently. It delivers in
+this order:
+
+1. **Email via [Resend](https://resend.com)** when `RESEND_API_KEY` is set —
+   the right choice for Vercel. Optional overrides: `ENQUIRY_TO_EMAIL`
+   (defaults to `travel@havytours.com`) and `ENQUIRY_FROM_EMAIL`.
+
+   Setup: create a Resend account **with the travel@havytours.com address** (on
+   the free tier, Resend's onboarding sender can only deliver to the account
+   email), generate an API key, and add it in Vercel → Project → Settings →
+   Environment Variables. To send from a custom address or to other inboxes,
+   verify `havytours.com` in Resend → Domains instead.
+2. **Webhook** when `ENQUIRY_WEBHOOK_URL` is set (Zapier, Make, a CRM — any
+   JSON POST endpoint).
+3. **WhatsApp handoff** when neither is configured in production: the API
+   returns a one-tap WhatsApp link with the entire enquiry pre-filled, and the
+   form offers it to the visitor. Nothing is lost, even before email is wired.
+4. **Local development** appends to `data/enquiries.json` (gitignored).
 To go live, swap `app/api/enquiries/route.ts` for a real integration — email, CRM or
 database. The request/response contract stays identical.
 
@@ -78,23 +97,24 @@ database. The request/response contract stays identical.
 runs to roughly 1,200 words of nested clauses; it's now a scannable story plus
 structured sections. Nothing factual was changed.
 
-**⚠️ Needs verifying:** the Epic Escapades *ride* price list (30/60-minute
-water-bike and jet-ski rates) was read off a screenshot of the current site, not
-from a data source. It's marked on-page and flagged in `lib/brands.ts` — confirm
-the figures with the Jinja team before launch.
+**✅ Confirmed via the official Epic Escapades store:** the *30-minute* water-bike
+rates (EAC UGX 80,000 / child 60,000; foreigners $40 / $30) match
+`epicescapadesug.com/product/water-biking`. The **60-minute band** (UGX 150,000 /
+130,000; $50 / $40) comes from the price board displayed on havytours.com and is
+still worth a quick check with the Jinja team — it's noted on-page.
 
 ---
 
 ## ⚠️ Placeholder content — replace before launch
 
-Everything below is invented for the prototype:
-
-1. **All photography.** Every image in `public/images/` is AI-generated and is not a
-   real Havy Tours asset. Swap in the company's own library — the current site
-   already hosts a large set of real park photos at
-   `havytours.com/wp-content/uploads/`, and the Epic Escapades site has real
-   activity photography too. A few tours still share an image (Kidepo appears on
-   three), which resolves once real photography is dropped in.
+1. **Photography is now partly real.** Every tour's primary photo, the home-page
+   hero, the Epic Escapades brand image and the honeymoon card are hotlinked from
+   the company's own uploads on `havytours.com` — the same assets the live site
+   shows today. Tour *galleries*, the About team photo, the custom-trip notebook
+   illustration and the category imagery remain AI-generated placeholders until
+   the company supplies its real library. If any hotlink ever breaks, the local
+   AI images are still in `public/images/` as an immediate fallback (revert
+   `image:` fields in `lib/tours.ts` to the `IMG.*` entries).
 2. **Testimonials** on the home page — three sample quotes, marked on-page.
 3. **Team names and roles** on `/about` — four cards reading `PLACEHOLDER`.
 4. **Office map** on `/contact` — a labelled empty frame; embed Google Maps.
@@ -156,16 +176,19 @@ sitemap entry and form dropdown updates from it automatically.
 
 ## Suggested next steps
 
-- Replace placeholder photography with the company's real image library
-- Confirm the Epic Escapades ride price list with the Jinja team
+- **Set `RESEND_API_KEY` on Vercel** so enquiries email `travel@havytours.com`
+  automatically — see *Enquiry delivery* above. Until it's set, the form hands
+  each enquiry to WhatsApp intact, so nothing is lost.
 - **Fill in the partner names.** The 16 partners are hotlinked in order from the
   old site, but only the four schools (Kabojja International School, Trinity
   College Nabbingo, Harvest International School, Lubiri Secondary School) were
   identifiable from their filenames. The rest show as "Partner N" in
   `lib/partners.ts` — drop in the real organisation names, and swap the hotlinks
   for locally-hosted artwork when it's available.
+- Check the remaining 60-minute ride price band with the Jinja team
+- Replace the remaining AI placeholder images (galleries, About team photo) with
+  the company's real library
 - Collect three real testimonials and real team profiles
-- Connect the enquiry endpoint to `travel@havytours.com` (or a CRM)
 - Add real availability / permit calendar for gorilla and chimpanzee trekking
 - Add an Instagram feed if the company wants it
 - Run Lighthouse and confirm Core Web Vitals on real Ugandan mobile networks

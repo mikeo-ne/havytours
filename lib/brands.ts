@@ -20,7 +20,9 @@ export const epicEscapades = {
   tagline: "Your fun starts here.",
   parent: "A product of Havy Tours and Travel (U) Ltd",
   website: "https://epicescapadesug.com/",
-  image: "/images/epic-escapades.jpg",
+  /** Real water-bike photo from the company's live site. */
+  image:
+    "https://havytours.com/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-03-at-3.27.07-PM.jpeg",
   location:
     "Nile Crescent Road, at Brist Triangle Hotel, next to Jinja Sailing Club, Jinja City, Uganda",
   hours: "Open every day, 7:00am – 6:00pm",
@@ -47,12 +49,16 @@ export const epicActivities: Activity[] = [
 ];
 
 /**
- * Ride pricing for the water-bike / jet-ski fleet, as displayed on havytours.com.
- * NOTE: these figures were read from the current site design and should be
- * confirmed with the Epic Escapades team before this page goes live.
+ * Ride pricing for the water-bike fleet.
+ *
+ * The 30-minute rates are confirmed against the official Epic Escapades store
+ * (epicescapadesug.com/product/water-biking — "Duration: 30minutes", UGX 80,000
+ * / UGX 60,000 for East Africans, $40 / $30 for foreigners). The 60-minute band
+ * comes from the price board displayed on havytours.com and is still worth a
+ * quick check with the Jinja team before launch.
  */
 export const epicRidePricing = {
-  note: "Ride pricing as shown on havytours.com — confirm before launch.",
+  note: "30-minute rates confirmed against epicescapadesug.com; 60-minute rates from the Havy Tours price board.",
   resident: {
     label: "EAC residents",
     currency: "UGX",
