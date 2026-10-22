@@ -45,10 +45,10 @@
       <rect x="0" y="396" width="1080" height="876"/>
     </clipPath>
     <clipPath id="cardClip">
-      <rect x="48" y="604" width="640" height="514" rx="24"/>
+      <rect x="48" y="548" width="640" height="548" rx="24"/>
     </clipPath>
     <clipPath id="priceClip">
-      <rect x="48" y="1144" width="640" height="96" rx="18"/>
+      <rect x="48" y="1118" width="640" height="90" rx="18"/>
     </clipPath>
   </defs>
 
@@ -78,31 +78,31 @@
   <text x="1026" y="110" font-family="Montserrat 500" font-size="12.5" fill="#5C6B5E" text-anchor="end" letter-spacing="3" opacity="1">JINJA · THE NILE</text>
 
   <!-- ===================== headline ===================== -->
-  <text x="42" y="356" font-family="Great Vibes" font-size="200" fill="#0D2D15" text-anchor="start" opacity="1">Jinja</text>
-  <text x="52" y="472" font-family="Great Vibes" font-size="112" fill="#0D2D15" text-anchor="start" opacity="1">getaway trip</text>
+  <text x="42" y="330" font-family="Great Vibes" font-size="176" fill="#0D2D15" text-anchor="start" opacity="1">Jinja</text>
+  <text x="52" y="434" font-family="Great Vibes" font-size="102" fill="#0D2D15" text-anchor="start" opacity="1">getaway trip</text>
 
   <!-- eyebrow / tagline -->
   <g>
-    <rect x="54" y="516" width="60" height="3" fill="#C87A18"/>
-    <text x="134" y="531" font-family="Playfair 700" font-size="33" fill="#9C5E0F" text-anchor="start" letter-spacing="8" opacity="1">EPIC ESCAPADES</text>
+    <rect x="54" y="474" width="60" height="3" fill="#C87A18"/>
+    <text x="134" y="489" font-family="Playfair 700" font-size="31" fill="#9C5E0F" text-anchor="start" letter-spacing="7.5" opacity="1">EPIC ESCAPADES</text>
   </g>
 
   <!-- ===================== activity card ===================== -->
   <g filter="url(#cardShadow)">
-    <rect x="48" y="604" width="640" height="514" rx="24" fill="#F7F3E7"/>
+    <rect x="48" y="548" width="640" height="548" rx="24" fill="#F7F3E7"/>
   </g>
-  <rect x="48" y="604" width="640" height="514" rx="24"
+  <rect x="48" y="548" width="640" height="548" rx="24"
         fill="none" stroke="#C87A18" stroke-opacity="0.45" stroke-width="1.5"/>
-  <rect x="48" y="604" width="640" height="5" fill="url(#goldGrad)"/>
-  <rect x="48" y="628" width="5" height="466" fill="#C87A18" opacity="0.85"/>
+  <rect x="48" y="548" width="640" height="5" fill="url(#goldGrad)"/>
+  <rect x="48" y="572" width="5" height="500" fill="#C87A18" opacity="0.85"/>
 
   <g>
-    <text x="82" y="656" font-family="Montserrat 700" font-size="14" fill="#9C5E0F" text-anchor="start" letter-spacing="3.2" opacity="1">WHAT'S INCLUDED</text>
-    <line x1="82" y1="674" x2="654" y2="674"
+    <text x="82" y="594" font-family="Montserrat 700" font-size="14" fill="#9C5E0F" text-anchor="start" letter-spacing="3.2" opacity="1">WHAT'S INCLUDED</text>
+    <line x1="82" y1="610" x2="654" y2="610"
           stroke="#C87A18" stroke-opacity="0.35" stroke-width="1.5"/>
   </g>
 
-  <svg x="82" y="708" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  <svg x="82" y="638" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <!-- cable -->
     <path d="M0 8.4 L64 3.4" fill="none" stroke="#C87A18" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
     <!-- trolley -->
@@ -124,7 +124,7 @@
     <!-- shoes -->
     <path d="M23.6 43.2 l5.6 1.6 a2 2 0 0 1 -1 3.9 l-5.9 -1.7 z" fill="#C87A18"/>
     <path d="M40.4 43.2 l-5.6 1.6 a2 2 0 0 0 1 3.9 l5.9 -1.7 z" fill="#C87A18"/>
-  </svg><text x="152" y="741" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Zip lining</text><path d="M642 730 l6.5 6.5 L663 718" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="770" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  </svg><text x="144" y="668" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Zip lining</text><path d="M644 658 l6.5 6.5 L665 646" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="690" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <!-- rider, drawn behind the ring so the tube cradles them -->
     <path d="M32 4.2 a5.4 5.4 0 1 1 0 10.8 a5.4 5.4 0 0 1 0 -10.8 z" fill="#C87A18"/>
     <path d="M26 16.2 h12 a4.6 4.6 0 0 1 4.6 4.6 V 32 H21.4 v-11.2 a4.6 4.6 0 0 1 4.6 -4.6 z" fill="#C87A18"/>
@@ -133,7 +133,7 @@
     <!-- inner tube -->
     <path d="M32 27.4 a21 12.4 0 1 1 0 24.8 a21 12.4 0 0 1 0 -24.8 z M32 35.2 a10.6 5.6 0 1 0 0 11.2 a10.6 5.6 0 0 0 0 -11.2 z" fill="#C87A18" fill-rule="evenodd"/>
     <path d="M0 55 C5 51, 11 51, 16 55 C21 59, 27 59, 32 55 C37 51, 43 51, 48 55 C53 59, 59 59, 64 55 L64 59.6 C59 63.6, 53 63.6, 48 59.6 C43 55.6, 37 55.6, 32 59.6 C27 63.6, 21 63.6, 16 59.6 C11 55.6, 5 55.6, 0 59.6 Z" fill="#C87A18"/>
-  </svg><text x="152" y="803" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Water tubing</text><path d="M642 792 l6.5 6.5 L663 780" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="832" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  </svg><text x="144" y="720" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Water tubing</text><path d="M644 710 l6.5 6.5 L665 698" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="742" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <!-- wheels -->
     <path d="M14.8 26.6 a9.4 9.4 0 1 1 0 18.8 a9.4 9.4 0 0 1 0 -18.8 z M14.8 31 a5 5 0 1 0 0 10 a5 5 0 0 0 0 -10 z" fill="#C87A18" fill-rule="evenodd"/>
     <path d="M49.2 26.6 a9.4 9.4 0 1 1 0 18.8 a9.4 9.4 0 0 1 0 -18.8 z M49.2 31 a5 5 0 1 0 0 10 a5 5 0 0 0 0 -10 z" fill="#C87A18" fill-rule="evenodd"/>
@@ -147,7 +147,7 @@
     <path d="M41 10.8 h10.4 v3.8 H41 z" fill="#C87A18"/>
     <path d="M46 14.6 L44 18.4" fill="none" stroke="#C87A18" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M0 51.4 C5 47.4, 11 47.4, 16 51.4 C21 55.4, 27 55.4, 32 51.4 C37 47.4, 43 47.4, 48 51.4 C53 55.4, 59 55.4, 64 51.4 L64 56 C59 60, 53 60, 48 56 C43 52, 37 52, 32 56 C27 60, 21 60, 16 56 C11 52, 5 52, 0 56 Z" fill="#C87A18"/>
-  </svg><text x="152" y="865" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Water biking</text><path d="M642 854 l6.5 6.5 L663 842" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="894" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  </svg><text x="144" y="772" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Water biking</text><path d="M644 762 l6.5 6.5 L665 750" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="794" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <!-- tail feathers -->
     <path d="M17.6 34.4 C13 28.8 8.6 24.6 3.2 22.6 c3.2 5 4.6 10.4 4.2 15.8 -1.4 1 -2.6 2.4 -3.4 4.2 4.6 -0.8 9.4 0.2 13.6 3 z" fill="#C87A18"/>
     <!-- body -->
@@ -170,7 +170,7 @@
     <path d="M27 49.4 L25.4 58.4" fill="none" stroke="#C87A18" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M33.4 48.6 L32.6 58.4" fill="none" stroke="#C87A18" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M20.2 57.6 h6.2 v3.4 h-6.2 z M28.4 57.6 h6.2 v3.4 h-6.2 z" fill="#C87A18"/>
-  </svg><text x="152" y="927" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Chicken at Namawojolo</text><path d="M642 916 l6.5 6.5 L663 904" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="956" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  </svg><text x="144" y="824" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Chicken at Namawojolo</text><path d="M644 814 l6.5 6.5 L665 802" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="846" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <path d="M3.2 41 V 24.6 c0 -3 2.4 -5.4 5.4 -5.4 h13.2 l6.6 -5.4 h24.8 c3 0 5.4 2.4 5.4 5.4 v21.8 c0 3 -2.4 5.4 -5.4 5.4 H8.6 c-3 0 -5.4 -2.4 -5.4 -5.4 z M9.2 23.6 h13.6 v9.2 H9.2 z M26.6 18.6 h11.6 v14.2 H26.6 z M41.8 18.6 h13.6 v14.2 H41.8 z" fill="#C87A18" fill-rule="evenodd"/>
     <!-- wheels -->
     <path d="M17 41 a6.6 6.6 0 1 1 0 13.2 a6.6 6.6 0 0 1 0 -13.2 z M17 44.2 a3.4 3.4 0 1 0 0 6.8 a3.4 3.4 0 0 0 0 -6.8 z" fill="#C87A18" fill-rule="evenodd"/>
@@ -181,7 +181,7 @@
     <path d="M9.2 20.2 h4.6 v2.4 H9.2 z" fill="#C87A18"/>
     <!-- sliding-door seam -->
     <path d="M26.4 33.2 h1.8 v7.2 h-1.8 z" fill="#C87A18"/>
-  </svg><text x="152" y="989" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Transport to and fro</text><path d="M642 978 l6.5 6.5 L663 966" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="1010" width="46" height="46" viewBox="0 0 64 64" opacity="1">
+  </svg><text x="144" y="876" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Transport to and fro</text><path d="M644 866 l6.5 6.5 L665 854" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="892" width="40" height="40" viewBox="0 0 64 64" opacity="1">
     <!-- sun deck -->
     <path d="M18.6 10.4 h13.4 a2 2 0 0 1 2 2 v2.8 h-15.4 z" fill="#C87A18"/>
     <!-- cabin with glazing cut out -->
@@ -192,29 +192,39 @@
     <path d="M4.6 34.4 h55 c1 0 1.8 .9 1.6 1.9 l-1.9 8.6 c-.5 2.4 -2.6 4.2 -5.1 4.2 H11.9 c-2.5 0 -4.6 -1.8 -5.1 -4.2 l-1.9 -8.6 c-.2 -1 .6 -1.9 1.7 -1.9 z" fill="#C87A18"/>
     <path d="M15.4 38.6 a2.2 2.2 0 1 1 0 4.4 a2.2 2.2 0 0 1 0 -4.4 z M25.4 38.6 a2.2 2.2 0 1 1 0 4.4 a2.2 2.2 0 0 1 0 -4.4 z M35.4 38.6 a2.2 2.2 0 1 1 0 4.4 a2.2 2.2 0 0 1 0 -4.4 z M45.4 38.6 a2.2 2.2 0 1 1 0 4.4 a2.2 2.2 0 0 1 0 -4.4 z" fill="#C87A18" fill-rule="evenodd"/>
     <path d="M0 52.6 C5 48.6, 11 48.6, 16 52.6 C21 56.6, 27 56.6, 32 52.6 C37 48.6, 43 48.6, 48 52.6 C53 56.6, 59 56.6, 64 52.6 L64 57.2 C59 61.2, 53 61.2, 48 57.2 C43 53.2, 37 53.2, 32 57.2 C27 61.2, 21 61.2, 16 57.2 C11 53.2, 5 53.2, 0 57.2 Z" fill="#C87A18"/>
-  </svg><text x="152" y="1051" font-family="Montserrat 600" font-size="26.5" fill="#17301F" text-anchor="start" opacity="1">Boat cruise</text><text x="152" y="1074" font-family="Montserrat 500" font-size="17" fill="#5C6B5E" font-style="italic" text-anchor="start" opacity="1">to the Source of the Nile</text><path d="M642 1032 l6.5 6.5 L663 1020" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  </svg><text x="144" y="928" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Boat cruise</text><text x="144" y="949" font-family="Montserrat 500" font-size="15.5" fill="#5C6B5E" font-style="italic" text-anchor="start" opacity="1">to the Source of the Nile</text><path d="M644 911 l6.5 6.5 L665 899" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="970" width="40" height="40" viewBox="0 0 64 64" opacity="1">
+    <!-- plate -->
+    <path d="M32 20.6 a16.4 16.4 0 1 1 0 32.8 a16.4 16.4 0 0 1 0 -32.8 z M32 25.4 a11.6 11.6 0 1 0 0 23.2 a11.6 11.6 0 0 0 0 -23.2 z" fill="#C87A18" fill-rule="evenodd"/>
+    <!-- fork -->
+    <path d="M10.4 7.4 h3.6 v13.2 h2.6 V7.4 h3.4 v13.2 h2.4 V7.4 h3.6 v15.4 c0 3.2 -2.4 5.6 -5.6 5.8 v20.6 a2.2 2.2 0 0 1 -4.4 0 V28.6 c-3.2 -.2 -5.6 -2.6 -5.6 -5.8 z" fill="#C87A18"/>
+    <!-- knife -->
+    <path d="M53.4 7.2 c3.4 5 4.6 10.4 4.2 15.8 -.3 3.9 -2.3 6.1 -5.4 6.5 v19.9 a2.2 2.2 0 0 1 -4.4 0 V7.2 z" fill="#C87A18"/>
+  </svg><text x="144" y="1000" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Meals</text><path d="M644 990 l6.5 6.5 L665 978" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><svg x="82" y="1022" width="40" height="40" viewBox="0 0 64 64" opacity="1">
+    <path d="M32 4.6 c-10.2 0 -18.4 8.2 -18.4 18.4 0 13.6 15.4 29.9 17.1 31.7 a1.9 1.9 0 0 0 2.7 0 c1.7 -1.8 17.1 -18.1 17.1 -31.7 C50.4 12.8 42.2 4.6 32 4.6 z M32 15.6 a7.6 7.6 0 1 0 0 15.2 a7.6 7.6 0 0 0 0 -15.2 z" fill="#C87A18" fill-rule="evenodd"/>
+    <path d="M19.6 58.6 h24.8 a2.4 2.4 0 0 1 0 4.8 H19.6 a2.4 2.4 0 0 1 0 -4.8 z" fill="#C87A18"/>
+  </svg><text x="144" y="1052" font-family="Montserrat 600" font-size="24" fill="#17301F" text-anchor="start" opacity="1">Pick-up point</text><path d="M644 1042 l6.5 6.5 L665 1030" fill="none" stroke="#C87A18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
 
   <!-- ===================== price + date ===================== -->
-  <rect x="0" y="1126" width="1080" height="146" fill="#F7F3E7" opacity="0"/>
+  <rect x="0" y="1100" width="1080" height="172" fill="#F7F3E7" opacity="0"/>
   <g filter="url(#barShadow)">
-    <rect x="48" y="1144" width="640" height="96" rx="18" fill="#0D2D15"/>
+    <rect x="48" y="1118" width="640" height="90" rx="18" fill="#0D2D15"/>
   </g>
   <g clip-path="url(#priceClip)">
-    <rect x="48" y="1144" width="6" height="96" fill="#C87A18"/>
+    <rect x="48" y="1118" width="6" height="90" fill="#C87A18"/>
   </g>
 
   <g>
-    <text x="74" y="1175" font-family="Montserrat 600" font-size="12" fill="#E4A94A" text-anchor="start" letter-spacing="2.4" opacity="1">TRIP PACKAGE FROM</text>
-    <text x="74" y="1216" font-family="Montserrat 800" font-size="36" fill="#F7F3E7" text-anchor="start" opacity="1">UGX 300,000</text>
-    <text x="74" y="1231" font-family="Montserrat 500" font-size="12.5" fill="#9FBBA4" text-anchor="start" opacity="1">per person</text>
+    <text x="74" y="1149" font-family="Montserrat 600" font-size="12" fill="#E4A94A" text-anchor="start" letter-spacing="2.4" opacity="1">TRIP PACKAGE FROM</text>
+    <text x="74" y="1190" font-family="Montserrat 800" font-size="36" fill="#F7F3E7" text-anchor="start" opacity="1">UGX 300,000</text>
+    <text x="74" y="1205" font-family="Montserrat 500" font-size="12.5" fill="#9FBBA4" text-anchor="start" opacity="1">per person</text>
   </g>
 
-  <line x1="510" y1="1164" x2="510"
-        y2="1220" stroke="#C87A18" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="510" y1="1138" x2="510"
+        y2="1188" stroke="#C87A18" stroke-opacity="0.45" stroke-width="1.5"/>
 
   <g>
-    <text x="662" y="1192" font-family="Playfair 800" font-size="34" fill="#E4A94A" text-anchor="end" opacity="1">12 DEC</text>
-    <text x="662" y="1218" font-family="Montserrat 600" font-size="12.5" fill="#9FBBA4" text-anchor="end" letter-spacing="1.8" opacity="1">SATURDAY · 2026</text>
+    <text x="662" y="1166" font-family="Playfair 800" font-size="34" fill="#E4A94A" text-anchor="end" opacity="1">12 DEC</text>
+    <text x="662" y="1192" font-family="Montserrat 600" font-size="12.5" fill="#9FBBA4" text-anchor="end" letter-spacing="1.8" opacity="1">SATURDAY · 2026</text>
   </g>
 
   <!-- ===================== footer ===================== -->
@@ -234,7 +244,7 @@
         y2="1392" stroke="#C87A18" stroke-opacity="0.3" stroke-width="1.5"/>
 
   <g>
-    <text x="1026" y="1352" font-family="Montserrat 700" font-size="28" fill="#F7F3E7" text-anchor="end" opacity="1">havtours.com</text>
+    <text x="1026" y="1352" font-family="Montserrat 700" font-size="28" fill="#F7F3E7" text-anchor="end" opacity="1">havytours.com</text>
     <text x="1026" y="1378" font-family="Montserrat 500" font-size="13" fill="#9FBBA4" text-anchor="end" letter-spacing="1.2" opacity="1">Book your seat today</text>
   </g>
 </svg>

@@ -25,14 +25,14 @@ price: '300,000',        // shown as "UGX 300,000"
 date: '12 DEC',
 dateNote: 'SATURDAY · 2026',
 phone: '0762 652 564',
-web: 'havtours.com',
+web: 'havytours.com',
 items: [                 // each row = icon + label, optional `sub` line
   { icon: 'zipline', label: 'Zip lining' },
   ...
 ],
 ```
 
-Available icons: `zipline`, `tubing`, `waterbike`, `chicken`, `van`, `boat`
+Available icons: `zipline`, `tubing`, `waterbike`, `chicken`, `van`, `boat`, `meals`, `pickup`
 (all hand-drawn vectors in `src/icons.js`).
 
 Then rebuild:
@@ -55,10 +55,12 @@ npm run build        # regenerates SVG + all PNG/JPG exports
   activities share one visual weight.
 - **Boat cruise** carries the client's update "to the Source of the Nile" as a
   sub-line, per the WhatsApp brief.
+- **Meals** and **pick-up point** were confirmed as included by the client and
+  appear in the activity list.
 - **12 December 2026 is a Saturday** — verified, and shown on the date block.
 
 ## Content to confirm with the client
 
 - The price reads **UGX 300,000** ("300 k" in the brief); labelled *per person*.
-- Accommodation, meals and pickup point are not stated, so the poster makes no
-  claim about them. Add a line if the package includes them.
+- Meals and pick-up point are confirmed included.
+- Accommodation is still not stated, so the poster makes no claim about it.

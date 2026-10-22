@@ -30,6 +30,8 @@ const CONFIG = {
     { icon: 'chicken',   label: 'Chicken at Namawojolo' },
     { icon: 'van',       label: 'Transport to and fro' },
     { icon: 'boat',      label: 'Boat cruise', sub: 'to the Source of the Nile' },
+    { icon: 'meals',     label: 'Meals' },
+    { icon: 'pickup',    label: 'Pick-up point' },
   ],
 
   price: '300,000',
@@ -39,7 +41,7 @@ const CONFIG = {
   dateNote: 'SATURDAY · 2026',
 
   phone: '0762 652 564',
-  web: 'havtours.com',
+  web: 'havytours.com',
 };
 
 const C = {
@@ -87,9 +89,9 @@ const imgMime = (p) => (/\.png$/i.test(p) ? 'image/png' : 'image/jpeg');
 const PAD = 54;
 const CARD_X = PAD - 6;
 const CARD_W = 640;
-const ROW_H = 62;
-const SUB_EXTRA = 24;
-const CARD_TOP = 604;
+const ROW_H = 52;
+const SUB_EXTRA = 20;
+const CARD_TOP = 548;
 const FOOTER_TOP = 1272;
 const PHOTO_TOP = 396;
 
@@ -99,12 +101,12 @@ function buildSVG(cfg = CONFIG) {
 
   // --- activity card -------------------------------------------------------
   const rowsHeight = cfg.items.reduce((a, it) => a + ROW_H + (it.sub ? SUB_EXTRA : 0), 0);
-  const cardH = rowsHeight + 118;
+  const cardH = rowsHeight + 112;
   const cardBottom = CARD_TOP + cardH;
 
   // --- price bar -----------------------------------------------------------
-  const priceY = cardBottom + 26;
-  const priceH = 96;
+  const priceY = cardBottom + 22;
+  const priceH = 90;
 
   // --- hero photo: cover the band, rider kept to the right -----------------
   const bandH = FOOTER_TOP - PHOTO_TOP;
@@ -117,23 +119,23 @@ function buildSVG(cfg = CONFIG) {
 
   // --- activity rows -------------------------------------------------------
   let rows = '';
-  let rowY = CARD_TOP + 96;
+  let rowY = CARD_TOP + 84;
   cfg.items.forEach((it) => {
-    const iconSize = 46;
+    const iconSize = 40;
     rows += iconSVG(it.icon, {
-      x: CARD_X + 34, y: rowY + (it.sub ? 0 : 8), size: iconSize, fill: C.gold,
+      x: CARD_X + 34, y: rowY + (it.sub ? 0 : 6), size: iconSize, fill: C.gold,
     });
-    rows += text(CARD_X + 104, rowY + 41, it.label, {
-      font: 'Montserrat 600', size: 26.5, fill: C.ink,
+    rows += text(CARD_X + 96, rowY + 36, it.label, {
+      font: 'Montserrat 600', size: 24, fill: C.ink,
     });
     if (it.sub) {
-      rows += text(CARD_X + 104, rowY + 64, it.sub, {
-        font: 'Montserrat 500', size: 17, fill: C.muted, italic: true,
+      rows += text(CARD_X + 96, rowY + 57, it.sub, {
+        font: 'Montserrat 500', size: 15.5, fill: C.muted, italic: true,
       });
     }
     // gold tick: reads as "this is covered"
-    const tx = CARD_X + CARD_W - 46;
-    const ty = rowY + (it.sub ? 22 : 30);
+    const tx = CARD_X + CARD_W - 44;
+    const ty = rowY + (it.sub ? 19 : 26);
     rows += `<path d="M${tx} ${ty} l6.5 6.5 L${tx + 21} ${ty - 12}" fill="none" stroke="${C.gold}"`
       + ` stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>`;
     rowY += ROW_H + (it.sub ? SUB_EXTRA : 0);
@@ -219,14 +221,14 @@ function buildSVG(cfg = CONFIG) {
   ${text(W - PAD, 110, 'JINJA · THE NILE', { font: 'Montserrat 500', size: 12.5, ls: 3, fill: C.muted, anchor: 'end' })}
 
   <!-- ===================== headline ===================== -->
-  ${text(PAD - 12, 356, cfg.script[0], { font: 'Great Vibes', size: 200, fill: C.green })}
-  ${text(PAD - 2, 472, cfg.script[1], { font: 'Great Vibes', size: 112, fill: C.green })}
+  ${text(PAD - 12, 330, cfg.script[0], { font: 'Great Vibes', size: 176, fill: C.green })}
+  ${text(PAD - 2, 434, cfg.script[1], { font: 'Great Vibes', size: 102, fill: C.green })}
 
   <!-- eyebrow / tagline -->
   <g>
-    <rect x="${PAD}" y="516" width="60" height="3" fill="${C.gold}"/>
-    ${text(PAD + 80, 531, cfg.eyebrow.toUpperCase(), {
-      font: 'Playfair 700', size: 33, ls: 8, fill: C.goldDeep,
+    <rect x="${PAD}" y="474" width="60" height="3" fill="${C.gold}"/>
+    ${text(PAD + 80, 489, cfg.eyebrow.toUpperCase(), {
+      font: 'Playfair 700', size: 31, ls: 7.5, fill: C.goldDeep,
     })}
   </g>
 
@@ -240,10 +242,10 @@ function buildSVG(cfg = CONFIG) {
   <rect x="${CARD_X}" y="${CARD_TOP + 24}" width="5" height="${cardH - 48}" fill="${C.gold}" opacity="0.85"/>
 
   <g>
-    ${text(CARD_X + 34, CARD_TOP + 52, "WHAT'S INCLUDED", {
+    ${text(CARD_X + 34, CARD_TOP + 46, "WHAT'S INCLUDED", {
       font: 'Montserrat 700', size: 14, ls: 3.2, fill: C.goldDeep,
     })}
-    <line x1="${CARD_X + 34}" y1="${CARD_TOP + 70}" x2="${CARD_X + CARD_W - 34}" y2="${CARD_TOP + 70}"
+    <line x1="${CARD_X + 34}" y1="${CARD_TOP + 62}" x2="${CARD_X + CARD_W - 34}" y2="${CARD_TOP + 62}"
           stroke="${C.gold}" stroke-opacity="0.35" stroke-width="1.5"/>
   </g>
 
